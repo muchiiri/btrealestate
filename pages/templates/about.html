@@ -249,7 +249,7 @@ style="background-image: url('static/images/hero_bg_3.jpg')"
   <div class="row mb-5 align-items-center">
     <div class="col-md-6">
       <h2 class="font-weight-bold heading text-primary mb-4 mb-md-0">
-        The Team
+        Our Agents
       </h2>
     </div>
     <div class="col-md-6 text-md-end">
@@ -266,141 +266,42 @@ style="background-image: url('static/images/hero_bg_3.jpg')"
   </div>
   <div class="testimonial-slider-wrap">
     <div class="testimonial-slider">
-      <div class="item">
-        <div class="testimonial">
-          <img
-            src="static/images/person_1-min.jpg"
-            alt="Image"
-            class="img-fluid rounded-circle w-25 mb-4"
-          />
-          <h3 class="h5 text-primary">James Smith</h3>
-          <p class="text-black-50">Designer, Co-founder</p>
-
-          <p>
-            Far far away, behind the word mountains, far from the
-            countries Vokalia and Consonantia, there live the blind texts.
-            Separated they live in Bookmarksgrove right at the coast of
-            the Semantics, a large language ocean.
-          </p>
-
-          <ul class="social list-unstyled list-inline dark-hover">
-            <li class="list-inline-item">
-              <a href="#"><span class="icon-twitter"></span></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#"><span class="icon-facebook"></span></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#"><span class="icon-linkedin"></span></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#"><span class="icon-instagram"></span></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="testimonial">
-          <img
-            src="static/images/person_2-min.jpg"
-            alt="Image"
-            class="img-fluid rounded-circle w-25 mb-4"
-          />
-          <h3 class="h5 text-primary">Carol Houston</h3>
-          <p class="text-black-50">Designer, Co-founder</p>
-
-          <p>
-            Far far away, behind the word mountains, far from the
-            countries Vokalia and Consonantia, there live the blind texts.
-            Separated they live in Bookmarksgrove right at the coast of
-            the Semantics, a large language ocean.
-          </p>
-
-          <ul class="social list-unstyled list-inline dark-hover">
-            <li class="list-inline-item">
-              <a href="#"><span class="icon-twitter"></span></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#"><span class="icon-facebook"></span></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#"><span class="icon-linkedin"></span></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#"><span class="icon-instagram"></span></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="testimonial">
-          <img
-            src="static/images/person_3-min.jpg"
-            alt="Image"
-            class="img-fluid rounded-circle w-25 mb-4"
-          />
-          <h3 class="h5 text-primary">Synthia Cameron</h3>
-          <p class="text-black-50">Designer, Co-founder</p>
-
-          <p>
-            Far far away, behind the word mountains, far from the
-            countries Vokalia and Consonantia, there live the blind texts.
-            Separated they live in Bookmarksgrove right at the coast of
-            the Semantics, a large language ocean.
-          </p>
-
-          <ul class="social list-unstyled list-inline dark-hover">
-            <li class="list-inline-item">
-              <a href="#"><span class="icon-twitter"></span></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#"><span class="icon-facebook"></span></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#"><span class="icon-linkedin"></span></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#"><span class="icon-instagram"></span></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="testimonial">
-          <img
-            src="static/images/person_4.jpg"
-            alt="Image"
-            class="img-fluid rounded-circle w-25 mb-4"
-          />
-          <h3 class="h5 text-primary">Davin Smith</h3>
-          <p class="text-black-50">Designer, Co-founder</p>
-
-          <p>
-            Far far away, behind the word mountains, far from the
-            countries Vokalia and Consonantia, there live the blind texts.
-            Separated they live in Bookmarksgrove right at the coast of
-            the Semantics, a large language ocean.
-          </p>
-
-          <ul class="social list-unstyled list-inline dark-hover">
-            <li class="list-inline-item">
-              <a href="#"><span class="icon-twitter"></span></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#"><span class="icon-facebook"></span></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#"><span class="icon-linkedin"></span></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#"><span class="icon-instagram"></span></a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      {% if realtors %}
+        {% for realtor in realtors %}
+          <div class="item">
+            <div class="testimonial">
+              <img
+                src="{{ realtor.photo.url }}"
+                alt="Image"
+                class="img-fluid rounded-circle w-25 mb-4"
+              />
+              <h3 class="h5 text-primary">{{ realtor.name }}</h3>
+              <p class="text-black-50">{{ realtor.email }}</p>
+    
+              <p>
+                {{ realtor.description }}
+              </p>
+    
+              <ul class="social list-unstyled list-inline dark-hover">
+                <li class="list-inline-item">
+                  <a href="#"><span class="icon-twitter"></span></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><span class="icon-facebook"></span></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><span class="icon-linkedin"></span></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="col-md-12"><p>No Realtors yet</p></div>
+      {% endif %}
     </div>
   </div>
 </div>
